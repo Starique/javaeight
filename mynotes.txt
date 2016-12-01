@@ -1,0 +1,330 @@
+C:\Users\tsyed\AppData\Local\Programs\Git
+
+git --version
+git config --global user.name "Tarique Syed"
+git config --global user.email syed.tarique@gmail.com
+
+
+How To generate the SSH Key
+
+- Open Git Bash.
+- ssh-keygen -t rsa -b 4096 -C "syed.tarique@gmail"
+- When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+- Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+- At the prompt, type a secure passphrase. 
+- Enter passphrase (empty for no passphrase): [Type a passphrase]
+- Enter same passphrase again: [Type passphrase again]
+
+Adding your SSH key to the ssh-agent
+
+- Before adding a new SSH key to the ssh-agent, you should have checked for existing SSH keys and generated a new SSH key.
+- If you have GitHub for Windows installed, you can use it to clone repositories and not deal with SSH keys. 
+
+- It also comes with the Git Bash tool, which is the preferred way of running git commands on Windows.
+
+Ensure ssh-agent is enabled:
+
+If you are using Git Bash, turn on ssh-agent:
+
+# start the ssh-agent in the background
+eval "$(ssh-agent -s)"
+Agent pid 59566
+If you are using another terminal prompt, such as Git for Windows, turn on ssh-agent:
+
+# start the ssh-agent in the background
+eval $(ssh-agent -s)
+Agent pid 59566
+Add your SSH key to the ssh-agent. If you used an existing SSH key rather than generating a new SSH key, you'll need to replace id_rsa in the command with the name of your existing private key file.
+
+$ ssh-add ~/.ssh/id_rsa
+
+Add the SSH key to your GitHub account.
+
+ssh-keygen -t rsa -b 4096 -C "syed.tarique@gmail.com"
+
+
+//Clone
+git clone git@github.com:Starique/javaeight.git
+
+git clone git@github.com:Starique/javaeight.git
+issue:
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of know
+n hosts.
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+copy the genrated key in teh .ssh directory
+
+//Create Branch, Checkout and merge
+
+- git checkout -b develop
+- git push -u origin develop
+- git checkout -b feature2
+- touch feature2.txt 
+- git add feature2.txt 
+
+
+- ssh-add ~/.ssh/tsyedgit
+- clip < ~/.ssh/tsyedgit.pub
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCy60l6m7TxGJgIx1NEsVDCiBqcs+VOdPVzZz3fMdLWLGvvEBkYxUcNEq4EcTHJ/v6NrhV6QQH+uUTGAGK+k/Owz2cGAYgtrF2EDmpeAWewdqodKbRbaaXmOET3WJFDno5knWe4YVTqCdF8MIOT8Cii2BOXTF4MPe1kPEBuNfxVfNMnLC00LHeJxBp3Cgm3zhpEBGNtpznYA5mJxpKhU2DeOrl2lVRm/hXzBJhkNlGKk8zBw2dyr2yyrzlJLuPOtyn5fbW1o3a5L1f72v5NdJJh+D54RmZbY9QM7o9FdcfSc63jh9/0mUZT4eQsyQHUnkkdzOOjd5IJYiiktvpeXniDeCw+7/R91wulsuMO6IUxi+U7SrMT7ZQuDdVY45uGaIDzLrfcQztmP7xhQY1MG7EmFzdU6yKZJCq9IJGYJALrSLIIjpHXELAsqp1bg6Z41WWSK2BMwcFwtz9hx3STZIKwvrky/yT3kh2ALcc7TI9LhEsFnqmJn6hVWciHFwmH/6FPOLSQG+68f8EdVnTNf4aPH65K+//SaKHQIeiaXP9o8wdTuCdNQmpJgGpuq5oF4fCx04Ihv0UB/cTpP1TUwvMhDoN8bs/YC7YNq3Ayo8jUY4mJ7u04nbe1Uz/4f8IMrVabhDsEp2OrCbocbg93o0JYysRn28+mvjHXPbI2OzmebQ== syed.tarique@gmail.com
+
+//
+cd /bin
+ln -s /drives/c/'Program Files (x86)'/Java/jre1.8.0_112/bin/java.exe java
+ln –s /drives/c/Users/tsyed/AppData/Local/Programs/Git/cmd/git.exe git
+
+ 
+//Centtralised Branch
+
+TSyed@AT405267 MINGW64 ~
+$ ssh-add ~/.ssh/tsyedgit
+Identity added: /c/Users/tsyed/.ssh/tsyedgit (/c/Users/tsyed/.ssh/tsyedgit)
+
+TSyed@AT405267 MINGW64 ~
+$ clip < ~/.ssh/tsyedgit.pub
+
+TSyed@AT405267 MINGW64 ~
+$ pwd
+/c/Users/tsyed
+
+TSyed@AT405267 MINGW64 ~
+$ cd ..
+
+TSyed@AT405267 MINGW64 /c/Users
+$ cd ..
+
+TSyed@AT405267 MINGW64 /c
+$ cd dev/github/
+
+TSyed@AT405267 MINGW64 /c/dev/github
+$ clear
+
+TSyed@AT405267 MINGW64 /c/dev/github
+$ ls -l
+total 8
+-rw-r--r-- 1 TSyed 1049089 3243 Nov 30 09:32 tsyedgit
+-rw-r--r-- 1 TSyed 1049089  748 Nov 30 09:32 tsyedgit.pub
+
+TSyed@AT405267 MINGW64 /c/dev/github
+$ git clone git@github.com:Starique/javaeight.git
+Cloning into 'javaeight'...
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (5/5), done.
+
+TSyed@AT405267 MINGW64 /c/dev/github
+$ ls -l
+total 12
+drwxr-xr-x 1 TSyed 1049089    0 Dec  1 09:20 javaeight/
+-rw-r--r-- 1 TSyed 1049089 3243 Nov 30 09:32 tsyedgit
+-rw-r--r-- 1 TSyed 1049089  748 Nov 30 09:32 tsyedgit.pub
+
+TSyed@AT405267 MINGW64 /c/dev/github
+$ cd javaeight/
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ touch mynotes.txt
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git add mynotes.txt
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ ls -l
+total 5
+-rw-r--r-- 1 TSyed 1049089 1086 Dec  1 09:20 LICENSE
+-rw-r--r-- 1 TSyed 1049089    0 Dec  1 09:22 mynotes.txt
+-rw-r--r-- 1 TSyed 1049089   37 Dec  1 09:20 README.md
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ vi README.md
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   mynotes.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git add README.md
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+        new file:   mynotes.txt
+
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git commit -m "This is my firsty changes in GIT"
+[master 5c30751] This is my firsty changes in GIT
+ 2 files changed, 3 insertions(+)
+ create mode 100644 mynotes.txt
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git push
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 438 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To github.com:Starique/javaeight.git
+   86b1bf0..5c30751  master -> master
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+
+//GIT Flow Work Flow
+ 
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ clear
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git checkout -b develop
+Switched to a new branch 'develop'
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+$ git push -u origin develop
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:Starique/javaeight.git
+ * [new branch]      develop -> develop
+Branch develop set up to track remote branch develop from origin.
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+$ git checkout -b feature2
+Switched to a new branch 'feature2'
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (feature2)
+$ touch feature2.txt
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (feature2)
+$ git add feature2.txt
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (feature2)
+$ git commit -m "Added feature2.txt"
+[feature2 dd830a5] Added feature2.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature2.txt
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (feature2)
+$ git push -u origin feature2
+Counting objects: 2, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 245 bytes | 0 bytes/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To github.com:Starique/javaeight.git
+ * [new branch]      feature2 -> feature2
+Branch feature2 set up to track remote branch feature2 from origin.
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (feature2)
+$ git checkout develop
+Switched to branch 'develop'
+Your branch is up-to-date with 'origin/develop'.
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+$ git pull
+Already up-to-date.
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+$ git merge feature2
+Updating 5c30751..dd830a5
+Fast-forward
+ feature2.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature2.txt
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:Starique/javaeight.git
+   5c30751..dd830a5  develop -> develop
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+
+
+Switched to branch 'develop'
+Your branch is up-to-date with 'origin/develop'.
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+$ git pull
+Already up-to-date.
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+$ git merge feature2
+Updating 5c30751..dd830a5
+Fast-forward
+ feature2.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature2.txt
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:Starique/javaeight.git
+   5c30751..dd830a5  develop -> develop
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+$ clear
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (develop)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git pull
+Already up-to-date.
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git merge develop
+Updating 5c30751..dd830a5
+Fast-forward
+ feature2.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature2.txt
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:Starique/javaeight.git
+   5c30751..dd830a5  master -> master
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git tag "1.0.0.RELEASE" -m "Releasing version 1.0.0"
+
+TSyed@AT405267 MINGW64 /c/dev/github/javaeight (master)
+$ git push --tags
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 181 bytes | 0 bytes/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To github.com:Starique/javaeight.git
+ * [new tag]         1.0.0.RELEASE -> 1.0.0.RELEASE
